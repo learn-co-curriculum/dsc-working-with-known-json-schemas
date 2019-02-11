@@ -62,7 +62,7 @@ docs = data['response']['docs']
 print(type(docs), len(docs))
 ```
 
-    <class 'list'> 10
+    <class 'list'> 9
 
 
 
@@ -71,7 +71,6 @@ for doc in docs:
     print(doc['headline'])
 ```
 
-    {'main': "MURDER, FIRE AND FIGHT IN NEGRO ATHLETE'S WAKE; Killed His Brother and Wounded Another, Say the Police. HIS WIFE WAS SHOT AT, TOO House Took Fire from Victim's Blazing Shirt -- Arrested After Hard Struggle -- Green Faces Homicide Charge.", 'kicker': None, 'content_kicker': None, 'print_headline': None, 'name': None, 'seo': None, 'sub': None}
     {'main': "HIGGINS, SPENT $22,189.53.; Governor-Elect's Election Expenses -- Harrison $9,220.28.", 'kicker': None, 'content_kicker': None, 'print_headline': None, 'name': None, 'seo': None, 'sub': None}
     {'main': 'GARDEN BOUTS CANCELED; Mauriello Says He Could Not Be Ready on Nov. 3', 'kicker': '1', 'content_kicker': None, 'print_headline': None, 'name': None, 'seo': None, 'sub': None}
     {'main': 'Stock Drop Is Biggest in 2 Months--Margin Rise Held Factor in Lightest Trading of 1955', 'kicker': '1', 'content_kicker': None, 'print_headline': None, 'name': None, 'seo': None, 'sub': None}
@@ -92,9 +91,6 @@ for doc in docs:
     print('\n')
 ```
 
-    MURDER, FIRE AND FIGHT IN NEGRO ATHLETE'S WAKE; Killed His Brother and Wounded Another, Say the Police. HIS WIFE WAS SHOT AT, TOO House Took Fire from Victim's Blazing Shirt -- Arrested After Hard Struggle -- Green Faces Homicide Charge.
-    
-    
     HIGGINS, SPENT $22,189.53.; Governor-Elect's Election Expenses -- Harrison $9,220.28.
     
     
@@ -182,26 +178,6 @@ df.head(3)
   <tbody>
     <tr>
       <th>0</th>
-      <td>4fc04eb745c1498b0d23d9fc</td>
-      <td>Green, Sterling, murder, arson, 216 W. 29th</td>
-      <td>{}</td>
-      <td>NaN</td>
-      <td>article</td>
-      <td>{'main': 'MURDER, FIRE AND FIGHT IN NEGRO ATHL...</td>
-      <td>[{'name': 'organizations', 'value': 'NEGROES',...</td>
-      <td>[]</td>
-      <td>NaN</td>
-      <td>5</td>
-      <td>1904-12-31T00:00:00Z</td>
-      <td>1</td>
-      <td>Sterling Green, a six-foot negro athlete, was ...</td>
-      <td>The New York Times</td>
-      <td>Article</td>
-      <td>https://query.nytimes.com/gst/abstract.html?re...</td>
-      <td>1025</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>4fc04eb745c1498b0d23da00</td>
       <td>Spent $22,200</td>
       <td>{}</td>
@@ -221,7 +197,7 @@ df.head(3)
       <td>213</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>4fc21ebf45c1498b0d612b22</td>
       <td>NaN</td>
       <td>{}</td>
@@ -239,6 +215,26 @@ df.head(3)
       <td>Article</td>
       <td>https://query.nytimes.com/gst/abstract.html?re...</td>
       <td>149</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4fc3b41d45c1498b0d7fd41e</td>
+      <td>NaN</td>
+      <td>{}</td>
+      <td>{'original': 'By JOHN G. FORREST', 'person': [...</td>
+      <td>article</td>
+      <td>{'main': 'Stock Drop Is Biggest in 2 Months--M...</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>NaN</td>
+      <td>F1</td>
+      <td>1955-05-15T00:00:00Z</td>
+      <td>1</td>
+      <td>Stock prices last week, on the lightest volume...</td>
+      <td>The New York Times</td>
+      <td>Article</td>
+      <td>https://query.nytimes.com/gst/abstract.html?re...</td>
+      <td>823</td>
     </tr>
   </tbody>
 </table>
@@ -296,16 +292,6 @@ df[new_cols].head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>MURDER, FIRE AND FIGHT IN NEGRO ATHLETE'S WAKE...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>HIGGINS, SPENT $22,189.53.; Governor-Elect's E...</td>
       <td>None</td>
       <td>None</td>
@@ -315,7 +301,7 @@ df[new_cols].head()
       <td>None</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>GARDEN BOUTS CANCELED; Mauriello Says He Could...</td>
       <td>1</td>
       <td>None</td>
@@ -325,7 +311,7 @@ df[new_cols].head()
       <td>None</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>Stock Drop Is Biggest in 2 Months--Margin Rise...</td>
       <td>1</td>
       <td>None</td>
@@ -335,8 +321,18 @@ df[new_cols].head()
       <td>None</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>MUSIC OF THE WEEK</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Anacomp Inc. reports earnings for Qtr to March 31</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
