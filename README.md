@@ -2,7 +2,7 @@
 # Working with Known JSON Schemas
 
 ## Introduction
-We've started taking a look at JSON files and we'll continue to explore how to navigate and traverse these files. One common use case of json files will be when we are connecting to various websites through their established APIs to retrieve data from them. With these, we are typically given a schema for how the data is structured and then will use this knowledge to retrieve pertinant information. In this lecture, we'll take a look at the response from the NY Times API.
+You've started taking a look at JSON files and you'll continue to explore how to navigate and traverse these files. One common use case of json files will be when you are connecting to various websites through their established APIs to retrieve data from them. With these, you are typically given a schema for how the data is structured and then will use this knowledge to retrieve pertinant information. In this lecture, you'll take a look at the response from the NY Times API.
 
 ## Objectives
 You will be able to:
@@ -13,11 +13,11 @@ You will be able to:
 ## Reading a JSON Schema
 
 Here's the JSON schema provided for a section of the NY Times API:
-<img src="schema_overview.png" width=500>
+<img src="images/schema_overview.png" width=500>
 
 or a more detailed view (truncated):
 
-<img src="schema_detailed.png" width=500>
+<img src="images/schema_detailed.png" width=500>
 
 You can see this yourself here:
 https://developer.nytimes.com/article_search_v2.json#/Documentation/GET/articlesearch.json
@@ -26,7 +26,7 @@ You can see that the master structure is a dictionary and has a key named 'respo
 
 ## Loading the Data File
 
-As we saw before, let's start by importing this data from file. We open to file and load its contents.
+As you saw before, let's start by importing this data from file. Here's how to open the file and load its contents.
 
 
 ```python
@@ -53,8 +53,7 @@ You should see that there are two additional keys 'status' and 'copyright' which
 
 ## Loading Specific Data
 
-Looking at the schema, we might be interested in retrieving a specific piece of data, such as the articles' headlines.
-We see that this is a key under **'docs'**, which is under 'response'. This gives us roughly: **data['response']['docs']['headline']**. While this is close to the code we'll use to extract headlines, something is a bit off. Notice that if you look closely at the schema outline, that the 'docs' subheading is actually a list. Each item within this list should be a dictionary with the keys shown above, but that is an important distinction. Breaking it into two steps we have:
+Looking at the schema, you might be interested in retrieving a specific piece of data, such as the articles' headlines. Notice that this is a key under **'docs'**, which is under 'response'. So the schema is roughly: **data['response']['docs']['headline']**. While this is close to the code you'll use to extract headlines, something is a bit off. Notice that if you look closely at the schema outline, that the 'docs' subheading is actually a list. Each item within this list should be a dictionary with the keys shown above, but that is an important distinction. Breaking it into two steps you have:
 
 
 ```python
@@ -82,7 +81,7 @@ for doc in docs:
     {'main': 'UNIONS AND BUILDERS READY FOR LONG FIGHT; None of the Strikers Back - Lock-Out Soon in Effect. 23,000 ALREADY INVOLVED Orders Sent to Every Building Employer Within Twenty-five Miles -- House-smiths Vote Not to Strike.', 'kicker': None, 'content_kicker': None, 'print_headline': None, 'name': None, 'seo': None, 'sub': None}
 
 
-Or if we want to just print the main headlines themselves:
+Or if you want to just print the main headlines themselves:
 
 
 ```python
@@ -122,7 +121,7 @@ for doc in docs:
 
 ## Transforming JSON to Alternative Formats
 
-We also have previously started to take a look at how to transform JSON to DataFrames. Investigating our schema, a good option for this could again be the 'docs' subheading. While this still has nested data itself, I recommend loading the entire section as a dataframe and then using functions to break apart nested data from there.
+You've also previously started to take a look at how to transform JSON to DataFrames. Investigating the schema, a good option for this could again be the 'docs' subheading. While this still has nested data itself, it's often easierto load the entire section as a dataframe and then use additional functions to break apart the internallt nested data from there.
 
 
 ```python
@@ -244,7 +243,7 @@ df.head(3)
 
 ## Breaking out nested data
 
-Now that we have the data loaded, let's clean it up by breaking out some of the nested data. For example, you should notice that the headline entries are actualy dictionaries. We could transform these into singular data columns with something like this:
+Now that you have the data loaded, it's time to clean it up by breaking out some of the nested data. For example, you should notice that the headline entries are actualy dictionaries. You could transform these into singular data columns with something like this:
 
 
 ```python
@@ -350,7 +349,7 @@ Wahoo! This is a good general strategy for transforming nested JSON: create a Da
 
 ## Outputing to JSON
 
-Finally, let's look at how we can write data back to JSON. Like loading, we first open a file (this time with write permission) and use the json package to transfer data to that file container.
+Finally, take a look at how you can write data back to JSON. Like loading, you first open a file (this time with write permission) and use the json package to transfer data to that file container.
 
 
 ```python
@@ -359,4 +358,4 @@ with open('output.json', 'w') as f:
 ```
 
 ## Summary
-There you have it! In this, we took another look at JSON, taking a look at an example schema diagram and retrieving information. We also looked at a general procedure for transforming nested data to Pandas DataFrames (create a DataFrame, and then break apart nested data using lambda functions to create additional columns). We also took a brief look at saving data to json files. 
+There you have it! In this, you took another look at JSON, taking a look at an example schema diagram and retrieving information. You also looked at a general procedure for transforming nested data to Pandas DataFrames (create a DataFrame, and then break apart nested data using lambda functions to create additional columns). Finally, you also took a brief look at saving data to json files. 
