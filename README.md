@@ -13,11 +13,11 @@ You will be able to:
 ## Reading a JSON Schema
 
 Here's the JSON schema provided for a section of the NY Times API:
-<img src="images/schema_overview.png" width=500>
+<img src="images/schema_overview.png" width="400">
 
 or a more detailed view (truncated):
 
-<img src="images/schema_detailed.png" width=500>
+<img src="images/schema_detailed.png" width="500">
 
 You can see this yourself here:
 https://developer.nytimes.com/article_search_v2.json#/Documentation/GET/articlesearch.json
