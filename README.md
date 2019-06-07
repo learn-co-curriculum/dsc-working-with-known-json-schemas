@@ -19,8 +19,7 @@ or a more detailed view (truncated):
 
 <img src="images/schema_detailed.png" width="500">
 
-You can see this yourself here:
-https://developer.nytimes.com/article_search_v2.json#/Documentation/GET/articlesearch.json
+
 
 You can see that the master structure is a dictionary and has a key named 'response'. This is also a dictionary and has two keys: 'data' and 'meta'. As you continue to examine the schema hierarchy, you'll notice the vast majority in this case are dictionaries. 
 
