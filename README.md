@@ -2,7 +2,7 @@
 # Working with Known JSON Schemas
 
 ## Introduction
-You've started taking a look at JSON files and you'll continue to explore how to navigate and traverse these files. One common use case of json files will be when you are connecting to various websites through their established APIs to retrieve data from them. With these, you are typically given a schema for how the data is structured and then will use this knowledge to retrieve pertinant information. In this lecture, you'll take a look at the response from the NY Times API.
+You've started taking a look at JSON files and you'll continue to explore how to navigate and traverse these files. One common use case of json files will be when you are connecting to various websites through their established APIs to retrieve data from them. With these, you are typically given a schema for how the data is structured and then will use this knowledge to retrieve pertinent information. In this lecture, you'll take a look at the response from the NY Times API.
 
 ## Objectives
 You will be able to:
@@ -21,11 +21,11 @@ or a more detailed view (truncated):
 
 
 
-You can see that the master structure is a dictionary and has a key named 'response'. This is also a dictionary and has two keys: 'data' and 'meta'. As you continue to examine the schema hierarchy, you'll notice the vast majority in this case are dictionaries. 
+You can see that the master structure is a dictionary and has a key named 'response'. This is also a dictionary and has two keys: 'data' and 'meta'. As you continue to examine the schema hierarchy, you'll notice the vast majority, in this case, are dictionaries. 
 
 ## Loading the Data File
 
-As you saw before, let's start by importing this data from file. Here's how to open the file and load its contents.
+As you saw before, let's start by importing this data from the file. Here's how to open the file and load its contents.
 
 
 ```python
@@ -120,7 +120,7 @@ for doc in docs:
 
 ## Transforming JSON to Alternative Formats
 
-You've also previously started to take a look at how to transform JSON to DataFrames. Investigating the schema, a good option for this could again be the 'docs' subheading. While this still has nested data itself, it's often easierto load the entire section as a dataframe and then use additional functions to break apart the internallt nested data from there.
+You've also previously started to take a look at how to transform JSON to DataFrames. Investigating the schema, a good option for this could again be the 'docs' subheading. While this still has nested data itself, it's often easier to load the entire section as a dataframe and then use additional functions to break apart the internally nested data from there.
 
 
 ```python
