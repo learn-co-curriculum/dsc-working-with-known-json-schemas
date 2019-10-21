@@ -6,8 +6,8 @@ You've started taking a look at JSON files and you'll continue to explore how to
 
 ## Objectives
 You will be able to:
-* Read JSON Documentation Schemas and translate into code
-* Extract data from known json schemas
+
+* Use the JSON module to load and parse JSON documents
 * Write data to predefined JSON schemas
 
 ## Reading a JSON Schema
