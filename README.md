@@ -9,6 +9,7 @@ You will be able to:
 
 * Use the JSON module to load and parse JSON documents
 * Write data to predefined JSON schemas
+* Convert JSON to a pandas dataframe
 
 ## Reading a JSON Schema
 
