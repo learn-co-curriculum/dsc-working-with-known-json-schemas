@@ -13,7 +13,7 @@ You will be able to:
 
 ## Reading a JSON Schema
 
-In this lesson, you'll take a look at the response from the New York Times API. (We cover APIs in more depth in other lessons, but the general idea is that the New York Times makes some of its data available over the web, and it uses the JSON format to do so.)
+In this lesson, you'll take a look at the response from the New York Times API. The general idea is that the New York Times makes some of its data available over the web, and it uses the JSON format to do so.
 
 Here's the JSON schema provided for a section of the NY Times API:
 <img src="images/schema_overview.png" width="400">
@@ -119,11 +119,11 @@ Ok, that's a dictionary, too. How about `data['response']['docs']`?
 # list
 ```
 
-So, that is the source of the error. We tried to treat this as a dictionary (accessing the value associated with the key `'headline'`) but it's a list!
+So, that is the source of the error. We tried to treat this as a dictionary (accessing the value associated with the key `'headline'`) but it's a list.
 
 If you scroll back up to the schema pictured above, this makes sense. The value associated with the `'docs'` key is shown surrounded by `[` and `]`, right before the `{` and `}`, indicating that this is a *list* of dictionaries, not just a dictionary.
 
-You'll run into this kind of distinction repeatedly when working with JSON data. Sometimes values will be nested in unexpected ways, or you'll miss a key detail when you're skimming the schema. What's most important is that you're able to keep going and figure out what went wrong, not that you get it right on the first try!
+You'll run into this kind of distinction repeatedly when working with JSON data. Sometimes values will be nested in unexpected ways, or you'll miss a key detail when you're skimming the schema. What's most important is that you're able to keep going and figure out what went wrong, not that you get it right on the first try.
 
 Now that we know that this is a list, let's extract it and print out some more information about it:
 
@@ -335,14 +335,13 @@ extract_headline_info(docs[2]['headline'])
 Now let's write another function that calls that function, then adds the `pub_date` and `word_count` keys and values:
 
 > In the cell below type the following code to define a function that calls our other function and adds the `pub_date` and `word_count` keys and values:
-<pre><code onmousedown='return false;' onselectstart='return false;'>
+```
 def extract_doc_info(doc):
     info = extract_headline_info(doc['headline'])
     info['pub_date'] = doc['pub_date']
     info['word_count'] = doc['word_count']
     return info
-</code>
-</pre>
+```
 
 
 ```python
@@ -451,7 +450,7 @@ Output exceeds the size limit. Open the full output data in a text editor
 """
 ```
 
-Thus we have successfully flattened the required data!
+Thus we have successfully flattened the required data
 
 ## Transforming JSON to Alternative Formats
 
@@ -519,6 +518,11 @@ df
 
 
 ```python
+
+```
+
+
+```python
 # replace this comment with the code to create DataFrame of raw docs info
 
 # replace this comment with the code to make new headline_main and headline_kicker columns
@@ -534,7 +538,7 @@ df
 # a pandas DataFrame with 9 rows and 5 columns
 ```
 
-Wahoo! This is a good general strategy for transforming nested JSON: create a DataFrame and then break out nested features into their own column features.
+This is a good general strategy for transforming nested JSON: create a DataFrame and then break out nested features into their own column features.
 
 ## Outputting to JSON
 
@@ -586,4 +590,4 @@ doc_info_list_from_disk == doc_info_list
 ```
 
 ## Summary
-There you have it! In this, you practiced using JSON some more, this time interpreting an example schema diagram in order to retrieve information. You also looked at a general procedure for transforming nested data to pandas DataFrames (create a DataFrame, and then break apart nested data using lambda functions to create additional columns). Finally, you also took a brief look at saving data to JSON files. 
+There you have it. In this, you practiced using JSON some more, this time interpreting an example schema diagram in order to retrieve information. You also looked at a general procedure for transforming nested data to pandas DataFrames (create a DataFrame, and then break apart nested data using lambda functions to create additional columns). Finally, you also took a brief look at saving data to JSON files. 
